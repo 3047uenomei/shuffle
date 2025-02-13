@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost').split(',')
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1, localhost').split(',')
 
 INSTALLED_APPS = [
     'shuffle.apps.ShuffleConfig',
@@ -76,10 +76,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# Corrected static settings
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# For collecting static files in production (should be different from STATICFILES_DIRS)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Directories for development static files
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "shuffle/static",  # Make sure this directory exists in your project
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
