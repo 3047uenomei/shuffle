@@ -26,12 +26,7 @@ SECRET_KEY = 'django-insecure-umxoee77pk**0q3o*&z_q90xf#4@3=i*fax&0b#&f-l=m$&pfx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['shuffle.railway.app', 'localhost', '127.0.0.1']
-=======
-ALLOWED_HOSTS = ['shuffle.railway.app']
->>>>>>> d70ce0ed90e92a1d78fc74c30d4585beffbf725e
-
 
 # Application definition
 
@@ -123,15 +118,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-<<<<<<< HEAD
-# Directory to collect static files for production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Directory to look for static files during development (your main static folder)
-=======
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
->>>>>>> d70ce0ed90e92a1d78fc74c30d4585beffbf725e
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # Keep your static folder here
 ]
